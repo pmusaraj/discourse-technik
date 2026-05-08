@@ -499,6 +499,10 @@ a:hover {
   -webkit-backdrop-filter: blur(12px);
 }
 
+.sidebar-wrapper .sidebar-container {
+  border-right: 0;
+}
+
 .sidebar-wrapper > * {
   padding-block: 0.32rem;
 }
