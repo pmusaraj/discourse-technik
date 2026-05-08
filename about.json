@@ -4,5 +4,21 @@
   "license_url": null,
   "component": false,
   "authors": "Penar Musaraj",
+  "color_schemes": {
+    "Technik": {
+      "primary": "111827",
+      "secondary": "F8F7F1",
+      "tertiary": "4E66C3",
+      "quaternary": "7FA8B3",
+      "header_background": "F8F7F1",
+      "header_primary": "111827",
+      "highlight": "E4EDF5",
+      "selected": "EEF2F8",
+      "hover": "F2F4F7",
+      "danger": "B35A51",
+      "success": "34785D",
+      "love": "B85C7E"
+    }
+  },
   "screenshots": ["screenshots/light.png"]
 }
