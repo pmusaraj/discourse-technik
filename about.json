@@ -3,5 +3,6 @@
   "about_url": null,
   "license_url": null,
   "component": false,
-  "authors": "Penar Musaraj"
+  "authors": "Penar Musaraj",
+  "screenshots": ["screenshots/light.png"]
 }

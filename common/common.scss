@@ -3,20 +3,20 @@
   --technik-ink: var(--primary);
   --technik-muted: var(--primary-medium);
   --technik-faint: var(--primary-low);
-  --technik-line: rgba(var(--primary-rgb), 0.13);
-  --technik-line-soft: rgba(var(--primary-rgb), 0.07);
-  --technik-line-strong: rgba(var(--tertiary-rgb), 0.32);
+  --technik-line: rgba(var(--primary-rgb), 0.055);
+  --technik-line-soft: rgba(var(--primary-rgb), 0.026);
+  --technik-line-strong: rgba(var(--tertiary-rgb), 0.14);
   --technik-blueprint: var(--tertiary);
   --technik-blueprint-soft: var(--tertiary-low);
   --technik-blueprint-wash: var(--tertiary-very-low);
   --technik-cyan: var(--quaternary);
-  --technik-panel: rgba(var(--secondary-rgb), 0.88);
+  --technik-panel: rgba(var(--secondary-rgb), 0.94);
   --technik-panel-solid: var(--secondary);
   --technik-shadow-xs: 0 1px 2px rgba(var(--always-black-rgb), 0.04);
-  --technik-shadow-sm: 0 6px 18px rgba(var(--always-black-rgb), 0.055);
-  --technik-shadow-lift: 0 10px 28px rgba(var(--always-black-rgb), 0.07);
-  --font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --heading-font-family: Georgia, "Times New Roman", serif;
+  --technik-shadow-sm: 0 4px 14px rgba(var(--always-black-rgb), 0.035);
+  --technik-shadow-lift: 0 8px 22px rgba(var(--always-black-rgb), 0.045);
+  --font-family: "Avenir Next", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --heading-font-family: "IBM Plex Serif", "Iowan Old Style", ui-serif, Georgia, serif;
   --d-border-radius: var(--space-1);
   --d-button-border-radius: var(--space-1);
   --d-input-border-radius: var(--space-1);
@@ -31,10 +31,10 @@ body {
     linear-gradient(90deg, var(--technik-line-soft) 1px, transparent 1px),
     linear-gradient(var(--technik-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--technik-line) 1px, transparent 1px),
-    radial-gradient(circle at 18% 0%, rgba(var(--tertiary-rgb), 0.10), transparent 26rem),
-    radial-gradient(circle at 92% 10%, rgba(var(--highlight-rgb), 0.16), transparent 32rem);
+    radial-gradient(circle at 18% 0%, rgba(var(--tertiary-rgb), 0.035), transparent 28rem),
+    radial-gradient(circle at 92% 10%, rgba(var(--highlight-rgb), 0.06), transparent 34rem);
   background-position: center top;
-  background-size: 8px 8px, 8px 8px, 40px 40px, 40px 40px, auto, auto;
+  background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px, auto, auto;
   color: var(--technik-ink);
   font-family: var(--font-family);
 }
@@ -48,12 +48,13 @@ body::after {
   width: 1px;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.7;
   background: repeating-linear-gradient(
     to bottom,
     var(--technik-line-strong) 0,
-    var(--technik-line-strong) 4px,
-    transparent 4px,
-    transparent 9px
+    var(--technik-line-strong) 2px,
+    transparent 2px,
+    transparent 12px
   );
 }
 
@@ -86,10 +87,11 @@ h1,
 h2,
 .category-list h3 {
   font-family: var(--heading-font-family);
+  font-weight: 400;
 }
 
 .d-header {
-  background: rgba(var(--secondary-rgb), 0.78);
+  background: rgba(var(--secondary-rgb), 0.90);
   border-bottom: 1px solid var(--technik-line);
   box-shadow: none;
   backdrop-filter: blur(14px);
@@ -99,7 +101,7 @@ h2,
 .d-header .title a,
 .d-header .title .header-title {
   color: var(--technik-ink);
-  font-weight: 750;
+  font-weight: 520;
 }
 
 .btn,
@@ -107,9 +109,9 @@ h2,
 .btn-primary,
 .btn-flat {
   border-radius: var(--d-button-border-radius);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 0.86em;
-  font-weight: 650;
+  font-family: var(--font-family);
+  font-size: 0.88em;
+  font-weight: 500;
   transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 140ms ease, outline-color 140ms ease;
 }
 
@@ -154,7 +156,7 @@ h2,
 .btn.btn-default:focus,
 .btn.btn-flat:hover,
 .btn.btn-flat:focus {
-  background: var(--technik-blueprint-wash);
+  background: rgba(var(--tertiary-rgb), 0.045);
   border-color: var(--technik-line-strong);
   color: var(--technik-blueprint);
 }
@@ -163,14 +165,14 @@ h2,
   border: 1px solid transparent;
   border-radius: var(--d-nav-pill-border-radius);
   color: var(--technik-muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-family);
   font-size: 0.9em;
-  font-weight: 650;
+  font-weight: 500;
 }
 
 .nav-pills > li > a:hover,
 .nav-pills > li > a:focus {
-  background: var(--technik-blueprint-wash);
+  background: rgba(var(--tertiary-rgb), 0.04);
   border-color: var(--technik-line);
   color: var(--technik-blueprint);
 }
@@ -208,6 +210,7 @@ h2,
   font-size: 0.82rem;
   line-height: 1;
   pointer-events: none;
+  opacity: 0.58;
 }
 
 .topic-list::after,
@@ -223,6 +226,7 @@ h2,
   font-size: 0.82rem;
   line-height: 1;
   pointer-events: none;
+  opacity: 0.58;
 }
 
 .topic-list thead,
@@ -230,8 +234,8 @@ h2,
   background:
     linear-gradient(var(--technik-line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--technik-line-soft) 1px, transparent 1px),
-    var(--technik-blueprint-wash);
-  background-size: 8px 8px;
+    rgba(var(--tertiary-rgb), 0.035);
+  background-size: 16px 16px;
 }
 
 .topic-list th,
@@ -239,7 +243,7 @@ h2,
   color: var(--technik-muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 0.74rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -259,14 +263,14 @@ h2,
 
 .topic-list-item:hover,
 .category-list tbody tr:hover {
-  background: linear-gradient(90deg, var(--technik-blueprint-wash), transparent 75%);
+  background: linear-gradient(90deg, rgba(var(--tertiary-rgb), 0.035), transparent 75%);
 }
 
 .topic-list .main-link a.title,
 .latest-topic-list-item .main-link a.title,
 a.title.raw-link.raw-topic-link {
   color: var(--technik-ink);
-  font-weight: 680;
+  font-weight: 520;
 }
 
 .topic-list .main-link a.title:hover,
@@ -303,7 +307,7 @@ a.title.raw-link.raw-topic-link:hover {
   color: var(--technik-blueprint);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 0.76rem;
-  font-weight: 650;
+  font-weight: 500;
   padding: 0.1rem 0.42rem;
 }
 
@@ -315,9 +319,9 @@ a.title.raw-link.raw-topic-link:hover {
     repeating-linear-gradient(
       -45deg,
       transparent 0,
-      transparent 8px,
-      var(--technik-line-soft) 8px,
-      var(--technik-line-soft) 9px
+      transparent 14px,
+      var(--technik-line-soft) 14px,
+      var(--technik-line-soft) 15px
     ),
     var(--technik-panel);
   border: 1px solid var(--technik-line);
@@ -329,8 +333,8 @@ a.title.raw-link.raw-topic-link:hover {
 .category-boxes .category-box:hover,
 .category-boxes-with-topics .category-box:hover {
   border-color: var(--technik-line-strong);
-  box-shadow: var(--technik-shadow-sm);
-  transform: translateY(-2px);
+  box-shadow: var(--technik-shadow-xs);
+  transform: translateY(-1px);
 }
 
 .category-boxes .category-box-inner,
@@ -358,7 +362,7 @@ a.title.raw-link.raw-topic-link:hover {
 .names span a,
 .names .first a {
   color: var(--technik-ink);
-  font-weight: 680;
+  font-weight: 520;
 }
 
 .d-editor-container,
@@ -370,7 +374,7 @@ a.title.raw-link.raw-topic-link:hover {
 #reply-control {
   background: var(--technik-panel-solid);
   border-radius: var(--space-1) var(--space-1) 0 0;
-  box-shadow: 0 -4px 20px rgba(var(--always-black-rgb), 0.055);
+  box-shadow: 0 -3px 16px rgba(var(--always-black-rgb), 0.035);
 }
 
 .d-editor-button-bar {
@@ -378,9 +382,9 @@ a.title.raw-link.raw-topic-link:hover {
     repeating-linear-gradient(
       90deg,
       transparent 0,
-      transparent 9px,
-      var(--technik-line-soft) 9px,
-      var(--technik-line-soft) 10px
+      transparent 16px,
+      var(--technik-line-soft) 16px,
+      var(--technik-line-soft) 17px
     ),
     var(--primary-very-low);
   border-radius: var(--space-1);
@@ -405,7 +409,7 @@ select:focus,
 .combo-box .combo-box-header:focus,
 .combo-box.is-expanded .combo-box-header {
   border-color: var(--technik-blueprint);
-  outline: 2px solid var(--technik-blueprint) !important;
+  outline: 2px solid rgba(var(--tertiary-rgb), 0.42) !important;
   outline-offset: 2px;
   box-shadow: none !important;
 }
@@ -462,9 +466,9 @@ select:focus,
     repeating-linear-gradient(
       -45deg,
       transparent 0,
-      transparent 10px,
-      var(--technik-line-soft) 10px,
-      var(--technik-line-soft) 11px
+      transparent 16px,
+      var(--technik-line-soft) 16px,
+      var(--technik-line-soft) 17px
     ),
     var(--technik-panel-solid);
   border: 1px solid var(--technik-line);
@@ -492,8 +496,8 @@ a:hover {
   background:
     linear-gradient(var(--technik-line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--technik-line-soft) 1px, transparent 1px),
-    rgba(var(--secondary-rgb), 0.82);
-  background-size: 10px 10px;
+    rgba(var(--secondary-rgb), 0.88);
+  background-size: 18px 18px;
   border: 1px solid var(--technik-line);
   border-radius: var(--space-1);
   box-shadow: var(--technik-shadow-xs);
@@ -521,7 +525,7 @@ a:hover {
 
 .sidebar-section-link-wrapper .sidebar-section-link {
   border-radius: var(--space-1);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-family);
 }
 
 .sidebar-section-link-wrapper .sidebar-section-link:hover,
