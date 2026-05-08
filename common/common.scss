@@ -27,6 +27,7 @@
 body {
   background-color: var(--technik-paper);
   background-image:
+    linear-gradient(to bottom, transparent 0 34vh, var(--technik-paper) 34vh),
     linear-gradient(var(--technik-line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--technik-line-soft) 1px, transparent 1px),
     linear-gradient(var(--technik-line) 1px, transparent 1px),
@@ -34,44 +35,9 @@ body {
     radial-gradient(circle at 18% 0%, rgba(var(--tertiary-rgb), 0.035), transparent 28rem),
     radial-gradient(circle at 92% 10%, rgba(var(--highlight-rgb), 0.06), transparent 34rem);
   background-position: center top;
-  background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px, auto, auto;
+  background-size: auto, 16px 16px, 16px 16px, 80px 80px, 80px 80px, auto, auto;
   color: var(--technik-ink);
   font-family: var(--font-family);
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.7;
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--technik-line-strong) 0,
-    var(--technik-line-strong) 2px,
-    transparent 2px,
-    transparent 12px
-  );
-}
-
-body::before {
-  left: max(1rem, calc((100vw - 1180px) / 2));
-}
-
-body::after {
-  right: max(1rem, calc((100vw - 1180px) / 2));
-}
-
-#main-outlet-wrapper,
-#main-outlet,
-.d-header,
-.d-header-wrap {
-  position: relative;
-  z-index: 1;
 }
 
 h1,
@@ -159,6 +125,35 @@ h2,
   background: rgba(var(--tertiary-rgb), 0.045);
   border-color: var(--technik-line-strong);
   color: var(--technik-blueprint);
+}
+
+.btn .d-icon,
+.btn svg,
+button .d-icon,
+button svg,
+.btn .d-icon svg,
+button .d-icon svg,
+.btn-default .d-icon,
+.btn-primary .d-icon,
+.btn-flat .d-icon,
+.btn:hover .d-icon,
+.btn:focus .d-icon,
+.btn:hover svg,
+.btn:focus svg,
+button:hover .d-icon,
+button:focus .d-icon,
+button:hover svg,
+button:focus svg,
+button:hover .d-icon svg,
+button:focus .d-icon svg,
+.btn-default:hover .d-icon,
+.btn-default:focus .d-icon,
+.btn-primary:hover .d-icon,
+.btn-primary:focus .d-icon,
+.btn-flat:hover .d-icon,
+.btn-flat:focus .d-icon {
+  color: inherit !important;
+  fill: currentColor !important;
 }
 
 .nav-pills > li > a {
@@ -493,14 +488,13 @@ a:hover {
 }
 
 .sidebar-wrapper {
-  background:
-    linear-gradient(var(--technik-line-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--technik-line-soft) 1px, transparent 1px),
-    rgba(var(--secondary-rgb), 0.88);
+  min-height: 100vh;
+  background: rgba(var(--secondary-rgb), 0.74);
   background-size: 18px 18px;
-  border: 1px solid var(--technik-line);
-  border-radius: var(--space-1);
-  box-shadow: var(--technik-shadow-xs);
+  border: 0;
+  border-right: 1px solid var(--technik-line);
+  border-radius: 0;
+  box-shadow: none;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -524,8 +518,18 @@ a:hover {
 }
 
 .sidebar-section-link-wrapper .sidebar-section-link {
+  border-color: transparent;
   border-radius: var(--space-1);
   font-family: var(--font-family);
+}
+
+.sidebar-section,
+.sidebar-section-wrapper,
+.sidebar-section-header,
+.sidebar-section-content,
+.sidebar-section-link-wrapper {
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .sidebar-section-link-wrapper .sidebar-section-link:hover,
@@ -539,11 +543,6 @@ a:hover {
 }
 
 @media (max-width: 767px) {
-  body::before,
-  body::after {
-    display: none;
-  }
-
   .topic-list,
   .latest-topic-list,
   .category-list,
